@@ -1,0 +1,26 @@
+### Registrar Usuarios
+POST http://localhost:8000/api/v1/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "admin2",
+    "email" : "admin2@mail.com",
+    "password" : "admin54321",
+    "c_password" : "admin54321"
+}
+
+### Login
+POST http://localhost:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email" : "admin2@mail.com",
+    "password" : "admin54321"
+}
+
+### Profile
+GET http://localhost:8000/api/v1/auth/profile
+Accept: application/json
+Authorization: Bearer 1|fplAjrCReX8MKj3inGxxwaaYxeYIpzgxRjoPNW9J50e03519
