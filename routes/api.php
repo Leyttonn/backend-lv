@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthContoller;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,6 @@ Route::prefix('/v1/auth')->group(function(){
         Route::post('/logout', [AuthContoller::class, 'funLogout']);
     });
 });
+
+// CRUD de Usuarios
+Route::apiResource("user", UsuarioController::class);
