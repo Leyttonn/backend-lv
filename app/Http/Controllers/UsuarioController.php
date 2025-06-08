@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -11,7 +12,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        // listar
+        $usuarios = DB::select('select * from users');
+
+        return response()->json($usuarios, 200);
     }
 
     /**
@@ -19,7 +23,13 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nombre = $request->name;
+        $correo = $request->email;
+        $clave = bcrypt($request->password);
+        // guardar
+        DB::insert('insert into users (name, email, password) values (?, ?, ?)');
+
+        return response()->json(["mensaje" => "Usuario Registrado"], 201);
     }
 
     /**

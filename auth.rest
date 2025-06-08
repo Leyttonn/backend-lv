@@ -4,8 +4,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "name" : "admin",
-    "email" : "admin@mail.com",
+    "name" : "admin2",
+    "email" : "admin2@mail.com",
     "password" : "admin54321",
     "c_password" : "admin54321"
 }
